@@ -43,8 +43,8 @@ namespace TodoListAppExampleWithBlazorWASM.Pages
 
             if (lst.Count > 0 && item != null)
             {
-                model.Item = item;
-                lst.RemoveAt(lst.ToList<TodoItemModel>().FindIndex(e => e.Item == model.Item));
+                //model.Item = item;
+                lst.RemoveAt(lst.ToList<TodoItemModel>().FindIndex(e => e.Item == item));
             }
         }
 
