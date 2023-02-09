@@ -23,7 +23,7 @@ namespace TodoListAppExampleWithBlazorWASM.Pages
         }
         async Task Save()
         {
-            if (model.Item == null)
+            if (model.Item == null || model.Item == string.Empty)
             {
                 await JSRuntime.InvokeVoidAsync("showAlert", "Please Enter a Task");
             }
