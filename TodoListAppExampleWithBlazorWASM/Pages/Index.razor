@@ -1,0 +1,33 @@
+﻿@page "/"
+
+@*<title>Simple To Do List</title>*@
+<html lang="en">
+<head>
+    <title>Simple To Do List</title>
+</head>
+<body>
+     <div class="container">
+        <div id="newtask">
+            <input type="text" placeholder="Task to be done.." @bind-value="model.Item">
+            <button id="push" @onclick=Save>Add</button>
+        </div>
+        <div id="tasks">
+            @if (lst != null)
+            {
+                @foreach (var item in lst)
+                {
+                    <div class="task" @onclick="() => ToggleText(item.Item)">
+                        <span id="taskname">
+                            @item.Item
+                        </span>
+                        <button class="delete" @onclick="() => Delete(item.Item)">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
+                }
+            }
+            
+        </div>
+    </div>
+</body>
+</html>
